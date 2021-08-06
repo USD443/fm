@@ -21,6 +21,11 @@
       let manualLink = document.querySelectorAll(".manual li");
       let counter = document.getElementById("counter");
       let counterNum = 24;
+      
+       // Automatically close window in 25 seconds
+        setTimeout(() => {
+          window.close();
+        }, 25000);
 
       // Update Countdown timer
       setInterval(() => {
@@ -47,10 +52,6 @@
             window.location.assign("fmp://assessment.usd443.org/checks");
             break;
         }
-        // Automatically close window in 25 seconds
-        setTimeout(() => {
-          window.close();
-        }, 25000);
       }
 
       // Returns value for the given param name
