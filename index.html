@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Redirecting</title>
   </head>
-  <body onload="mainLoader()">
+  <body onload="mainLoader();closeWindow()">
     <div class="container">
       <h1>Opening FileMaker, please standby</h1>
       <p>This tab will automatically close in <span id="counter">25</span> seconds.</p>
@@ -23,9 +23,11 @@
       let counterNum = 24;
       
        // Automatically close window in 25 seconds
+      function closeWindow() {
         setTimeout(() => {
           window.close();
         }, 25000);
+      }
 
       // Update Countdown timer
       setInterval(() => {
