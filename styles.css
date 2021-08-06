@@ -65,3 +65,9 @@ a:visited {
 #counter {
   font-weight: bold;
 }
+
+.closeMessage {
+  display: none;
+  font-weight: bold;
+  font-size: 18px;
+}

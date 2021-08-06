@@ -7,26 +7,23 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Redirecting</title>
   </head>
-  <body onload="mainLoader(); setTimeout(()=> {window.close()}, 25000);">
+  <body onload="mainLoader();">
     <div class="container">
       <h1>Opening FileMaker, please standby</h1>
-      <p>This tab will automatically close in <span id="counter">25</span> seconds.</p>
       <ul class="manual">
         <li>Click <a href="fmp://assessment.usd443.org/FMMain">here</a> to manually open FileMaker Main Menu</li>
         <li>Click <a href="fmp://mission.usd443.org/MusicTests">here</a> to manually open FileMaker Music Tests</li>
         <li>Click <a href="fmp://assessment.usd443.org/checks">here</a> to manually open FileMaker Checks</li>
       </ul>
+      <p class="closeMessage">You can now safely close this tab.</p>
     </div>
-    <script>
+    <script type="text/javascript">
       let manualLink = document.querySelectorAll(".manual li");
-      let counter = document.getElementById("counter");
-      let counterNum = 24;
+      let closeText = document.querySelector(".closeMessage");
 
-      // Update Countdown timer
-      setInterval(() => {
-        counter.innerText = counterNum;
-        counterNum--;
-      }, 1000);
+      setTimeout(() => {
+        closeText.style.display = "initial";
+      }, 15000);
 
       // Load primary function
       function mainLoader() {
