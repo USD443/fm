@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Redirecting</title>
+    <script src="app.js" defer></script>
   </head>
-  <body onload="mainLoader();">
+  <body>
     <div class="container">
       <h1>Opening FileMaker, please standby</h1>
       <ul class="manual">
@@ -17,47 +18,5 @@
       </ul>
       <p class="closeMessage">You can now safely close this tab.</p>
     </div>
-    <script type="text/javascript">
-      let manualLink = document.querySelectorAll(".manual li");
-      let closeText = document.querySelector(".closeMessage");
-
-      setTimeout(() => {
-        closeText.style.display = "initial";
-      }, 15000);
-
-      // Load primary function
-      function mainLoader() {
-        // Check for param value
-        switch (getParameter("app")) {
-          case null:
-            break;
-          case "main":
-            showLink(0);
-            window.location.assign("fmp://assessment.usd443.org/FMMain");
-            break;
-          case "music":
-            showLink(1);
-            window.location.assign("fmp://mission.usd443.org/MusicTests");
-            break;
-          case "checks":
-            showLink(2);
-            window.location.assign("fmp://assessment.usd443.org/checks");
-            break;
-        }
-      }
-
-      // Returns value for the given param name
-      function getParameter(param) {
-        let parameters = new URLSearchParams(window.location.search);
-        return parameters.get(param);
-      }
-
-      // Show manual link after 10 seconds
-      function showLink(index) {
-        setTimeout(() => {
-          manualLink[index].style.display = "initial";
-        }, 10000);
-      }
-    </script>
   </body>
 </html>
