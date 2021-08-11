@@ -1,5 +1,6 @@
 let manualLink = document.querySelectorAll(".manual li");
 let closeText = document.querySelector(".closeMessage");
+let contactText = document.querySelector(".contact");
 const head = document.querySelector("head");
 
 let newMeta = document.createElement("meta");
@@ -9,11 +10,12 @@ head.appendChild(newMeta);
 
 window.addEventListener("load", () => {
   mainLoader();
-  closeWindow();
+  // closeWindow();
 });
 
 setTimeout(() => {
-  closeText.style.display = "initial";
+  contactText.style.display = "block";
+  closeText.style.display = "inline-block";
 }, 15000);
 
 // Load primary function
